@@ -3,8 +3,8 @@ pipeline{
 		stages{
 			stage('get_code'){
 				steps{
-				git branch: 'main', url: 'https://github.com/username/repo-name.git'
-					}
+				git branch: 'main', url: ''
+					}https://github.com/pshivani96/Aitrends.git
 				}
 			stage('build_docker_image'){
 				steps{
