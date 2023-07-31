@@ -8,12 +8,12 @@ pipeline{
 				}
 			stage('build_docker_image'){
 				steps{
-					sh 'sudo docker build -t mydocker:v1 .'
+					sh 'sudo docker build -t myimg:v1.'
 					}
 				}
 			stage('run_docker_container'){
 				steps{
-					sh 'sudo docker run --name mydockerc1 --rm mydocker:v1'
+					sh 'sudo docker run --name you -p 8101:80 -d myimg:v1'
 					}
 				}				
 			}
