@@ -1,23 +1,4 @@
-pipeline{
-	agent any
-		stages{
-			stage('get_code'){
-				steps{
-				git branch: 'main', url: 'https://github.com/pshivani96/Aitrends.git'
-					}
-				}
-			stage('build_docker_image'){
-				steps{
-					sh 'sudo docker build -t myimg:v1.'
-					}
-				}
-			stage('run_docker_container'){
-				steps{
-					sh 'sudo docker run --name you -p 8101:80 -d myimg:v1'
-					}
-				}				
-			}
-	}
+
 
 pipeline {
     agent any
