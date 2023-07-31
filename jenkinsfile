@@ -1,0 +1,20 @@
+pipeline{
+	agent any
+		stages{
+			stage('get_code'){
+				steps{
+				git branch: 'main', url: 'https://github.com/username/repo-name.git'
+					}
+				}
+			stage('build_docker_image'){
+				steps{
+					sh 'sudo docker build -t mydocker:v1 .'
+					}
+				}
+			stage('run_docker_container'){
+				steps{
+					sh 'sudo docker run --name mydockerc1 --rm mydocker:v1'
+					}
+				}				
+			}
+	}
