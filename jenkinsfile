@@ -10,13 +10,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-			sh 'sudo docker run --name you -p 8101:80 -d myimg:v1
+			sh "sudo docker run --name you -p 8101:80 -d myimg:v1"
                 
             }
         }
         stage('Deploy') {
             steps {
-                sh 'sudo docker run --name you -p 8101:80 -d myimg:v1'
+                sh "sudo docker run --name you -p 8101:80 -d myimg:v1"
             }
         }
    }
