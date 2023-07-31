@@ -1,4 +1,4 @@
 FROM python
 RUN mkdir /pythonfiles
-COPY mypython.py /pythonfiles/
-CMD["python","/pythonfiles/mypython.py"]
+COPY python1.py /pythonfiles/
+CMD ["python","/pythonfiles/python1.py"]
