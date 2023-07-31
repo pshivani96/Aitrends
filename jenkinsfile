@@ -8,15 +8,15 @@ pipeline {
                 sh "sudo python3 python1.py"
             }
         }
-        stage('Test') {
+        stage('build') {
             steps {
-			sh "sudo docker run --name you -p 8101:80 -d myimg:v1"
+			sh 'sudo docker build -t  myimg:v1 .'
                 
             }
         }
-        stage('Deploy') {
+        stage('run') {
             steps {
-                sh "sudo docker run --name you -p 8101:80 -d myimg:v1"
+                sh 'sudo docker run --name you -p 8101:80 -d myimg:v1'
             }
         }
    }
